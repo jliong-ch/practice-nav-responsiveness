@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <img src="/vite.svg" class="logo" alt="Vite logo" />
+        <button id="nav-hamburger" onclick="toggleMenu()" alt="Open Menu" 
+          aria-controls="nav-list"
+          aria-expanded="false">
+          <span aria-label="Open Menu"></span>
+          <img src="/hamburger.svg"/>
+        </button>
+        <ul class="nav-list">
+          <button id="nav-close" onclick="toggleMenu()">
+            <span aria-label="Close Menu"></span>
+            <img src="close.png" alt="Close Menu">
+          </button>
+          <li><a href="index.html">
+            <span aria-hidden="true">00 </span>Home
+          </a></li>
+          <li><a href="destination.html">
+            <span aria-hidden="true">01 </span>Destination
+          </a></li>
+          <li><a href="crew.html">
+            <span aria-hidden="true">02 </span>Crew
+          </a></li>
+          <li><a href="technology.html">
+            <span aria-hidden="true">03 </span>Technology
+          </a></li>
+        </ul>
+      </div>
+    </nav>
+  </body>
+  <script src="main.js"></script>
+</html>

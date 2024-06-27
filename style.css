@@ -1,0 +1,123 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background-image: url("background.svg");
+  background-repeat: repeat-y;
+}
+img {
+  display: block;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+nav {
+  a {
+    text-decoration: none; 
+    color: #fff;
+  }
+  li {
+    list-style: none;
+  }
+}
+
+.nav-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2em;
+  background-color: hsl(0, 0%, 100%, .3);
+
+  @supports (backdrop-filter: blur(1rem)){
+    background-color: hsl(0, 0%, 100%, .1);
+    backdrop-filter: blur(.5rem);
+  }
+}
+#nav-hamburger, #nav-close {
+  display: none;
+}
+
+@media (max-width: 35em) {
+  .nav-list {
+    position: fixed;
+    flex-direction: column;
+    
+    inset: 0 0 0 100%;
+    padding: min(20vh, 10rem) 2em;
+    transition: inset 0.3s ease;
+  }
+  .nav-list.active {
+    inset: 0 0 0 30%;
+  }
+
+  #nav-hamburger {
+    display: block;
+    background: #ddd;
+    padding: 1em;
+    border-radius: 50%;
+    border: none;
+  }
+  #nav-hamburger:active {
+    background: #333;
+    img {
+      filter: invert(1);
+    }
+  }
+
+  #nav-close {
+    display: block;
+    border: none;
+    background: none;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    background: #ddd;
+    border: 1px black;
+    border-radius: 50%;
+
+    img {
+      max-height: 3em;
+    }
+  }
+}
+
+
+.logo {
+  max-height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
