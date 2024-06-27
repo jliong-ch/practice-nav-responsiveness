@@ -113,6 +113,17 @@ nav {
   }
 }
 
+@media (min-width: 35em) {
+  .nav-list a > span[aria-hidden] {
+    display: none;
+  }
+  .nav-list {
+    width: 75%;
+    padding-block: 2rem;
+    padding-inline: clamp(3rem, 8vw, 10rem);
+  }
+}
+
 
 .logo {
   max-height: 6em;
