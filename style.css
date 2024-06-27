@@ -22,7 +22,7 @@ body {
   min-height: 100vh;
 
   background-image: url("background.svg");
-  background-repeat: repeat-y;
+  background-repeat: repeat;
 }
 img {
   display: block;
@@ -60,7 +60,7 @@ nav {
     backdrop-filter: blur(.5rem);
   }
 }
-#nav-hamburger, #nav-close {
+#nav-hamburger{
   display: none;
 }
 
@@ -69,26 +69,31 @@ nav {
     position: fixed;
     flex-direction: column;
     
-    inset: 0 0 0 100%;
-    padding: min(20vh, 10rem) 2em;
-    transition: inset 0.3s ease;
-  }
-  .nav-list.active {
     inset: 0 0 0 30%;
+    padding: min(20vh, 10rem) 2em;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+  }
+  .nav-list[data-visible="true"] {
+    transform: translateX(0%);
   }
 
   #nav-hamburger {
     display: block;
-    background: #ddd;
-    padding: 1em;
-    border-radius: 50%;
+    background: transparent;
+    height: 2rem;
+    width: 2rem;
     border: none;
+    background-image: url("hamburger.svg");
+    background-repeat: no-repeat;
+    filter: invert(1);
+    z-index: 5000;
   }
-  #nav-hamburger:active {
-    background: #333;
-    img {
-      filter: invert(1);
-    }
+  #nav-hamburger[aria-expanded="true"] {
+    background: transparent;
+    background-image: url("hamburger.svg");
+    background-repeat: no-repeat;
+    /* too lazy to find a real close button whatever */
   }
 
   #nav-close {

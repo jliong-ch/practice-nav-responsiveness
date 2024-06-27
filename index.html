@@ -14,14 +14,10 @@
         <button id="nav-hamburger" onclick="toggleMenu()" alt="Open Menu" 
           aria-controls="nav-list"
           aria-expanded="false">
-          <span aria-label="Open Menu"></span>
-          <img src="/hamburger.svg"/>
+          <span aria-label="Menu"></span>
+          
         </button>
-        <ul class="nav-list">
-          <button id="nav-close" onclick="toggleMenu()">
-            <span aria-label="Close Menu"></span>
-            <img src="close.png" alt="Close Menu">
-          </button>
+        <ul class="nav-list" data-visible="false">
           <li><a href="index.html">
             <span aria-hidden="true">00 </span>Home
           </a></li>
